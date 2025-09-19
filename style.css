@@ -1,0 +1,248 @@
+/* 1. Import Techy Futuristic + Corsiva Font */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
+
+/* 2. Base Reset & Custom Cursor */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  cursor: crosshair;
+}
+
+/* 3. Global Styles */
+html {
+  transition: background-color 0.8s ease, color 0.8s ease;
+}
+
+body {
+  font-family: 'Orbitron', sans-serif;
+  line-height: 1.5;
+  background: var(--bg-color);
+  color: var(--text-color);
+  overflow-x: hidden;
+}
+
+/* 4. Title / Logo Style (Corsiva tech hybrid) */
+header h1,
+.title-logo {
+  font-family: 'Great Vibes', cursive;
+  font-size: 2.5rem;
+  font-weight: 400;
+  color: var(--accent-color);
+  letter-spacing: 2px;
+  text-shadow: 0 0 10px var(--accent-color);
+  margin-bottom: 0.5rem;
+}
+
+/* 5. Glassmorphism Header & Footer */
+header,
+footer {
+  padding: 1rem;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--accent-color);
+  box-shadow: 0 0 15px var(--accent-color);
+}
+
+/* 6. Navigation */
+nav {
+  margin: 1rem 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+}
+
+nav a {
+  display: inline-block;
+  padding: 0.6em 1.2em;
+  text-transform: uppercase;
+  font-weight: 700;
+  border-radius: 6px;
+  text-decoration: none;
+  text-align: center;
+
+  font-family: 'Orbitron', sans-serif;
+
+  /* button variables */
+  color: var(--button-text);
+  background: linear-gradient(135deg, var(--button-dark), var(--button-light));
+  border: 2px solid var(--button-glow);
+  box-shadow: 0 0 8px var(--button-glow);
+
+  transition: 
+    background 0.3s ease,
+    box-shadow 0.3s ease,
+    transform 0.2s ease,
+    color 0.2s ease;
+  backdrop-filter: blur(4px);
+}
+nav a:hover {
+  transform: translateY(-2px);
+  background: linear-gradient(135deg, var(--button-light), var(--button-dark));
+  box-shadow: 0 0 16px var(--button-glow);
+  color: var(--button-text-hover);
+}
+
+/* 7. Main Content Panel */
+main {
+  padding: 2rem;
+  margin: 2rem auto;
+  max-width: 1200px;
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(6px);
+  border-radius: 12px;
+  box-shadow: 0 0 25px var(--accent-color);
+  font-family: 'Orbitron', sans-serif;
+}
+
+/* 7B. IBAN Highlight */
+p code {
+  display: inline-block;
+  font-family: 'Orbitron', monospace;
+  font-size: 1.1rem;
+  font-weight: bold;
+  padding: 0.4em 0.8em;
+  margin-top: 0.5em;
+  border-radius: 8px;
+
+  background: linear-gradient(135deg, var(--accent-color), #111);
+  color: #fff;
+  text-shadow: 0 0 6px var(--accent-color);
+  box-shadow: 0 0 15px var(--accent-color);
+
+  letter-spacing: 2px;
+}
+
+/* 8. Buttons */
+button {
+  background: transparent;
+  border: 2px solid var(--accent-color);
+  color: var(--accent-color);
+  padding: 0.6em 1.2em;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  font-family: 'Orbitron', sans-serif;
+  box-shadow: 0 0 12px var(--accent-color);
+  transition: background 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+}
+button:hover {
+  background: var(--accent-color);
+  color: var(--bg-color);
+  box-shadow: 0 0 24px var(--accent-color);
+}
+
+/* 9. Theme Variables */
+:root {
+  --bg-color: #111;
+  --text-color: #00ffe7;
+  --accent-color: #00ffe7;
+
+  --button-dark: #333;
+  --button-light: #555;
+  --button-glow: rgba(255,255,255,0.3);
+  --button-text: #fff;
+  --button-text-hover: #000;
+}
+
+/* Seasonal Themes (day/night) */
+[data-theme="winter-day"] {
+  --bg-color: #eaf4fc;
+  --text-color: #102a43;
+  --accent-color: #0e7490;
+}
+[data-theme="winter-night"] {
+  --bg-color: #0a0a0a;
+  --text-color: #d0f0fd;
+  --accent-color: #00ccff;
+}
+[data-theme="spring-day"] {
+  --bg-color: #f0fff4;
+  --text-color: #073b3a;
+  --accent-color: #2dd4bf;
+}
+[data-theme="spring-night"] {
+  --bg-color: #1b1b2e;
+  --text-color: #a7f3d0;
+  --accent-color: #10b981;
+}
+[data-theme="summer-day"] {
+  --bg-color: #fffbea;
+  --text-color: #78350f;
+  --accent-color: #facc15;
+}
+[data-theme="summer-night"] {
+  --bg-color: #001f3f;
+  --text-color: #ffffff;
+  --accent-color: #ffd60a;
+}
+[data-theme="autumn-day"] {
+  --bg-color: #fff7ed;
+  --text-color: #7c2d12;
+  --accent-color: #ea580c;
+}
+[data-theme="autumn-night"] {
+  --bg-color: #3f1f0f;
+  --text-color: #ffd8a8;
+  --accent-color: #f97316;
+}
+
+/* Button styles per theme */
+[data-theme="spring-day"] {
+  --button-dark: #3a6351;
+  --button-light: #6fa28c;
+  --button-glow: rgba(111,162,140,0.4);
+  --button-text: #f0fff4;
+  --button-text-hover: #073b3a;
+}
+[data-theme="spring-night"] {
+  --button-dark: #4c6a6d;
+  --button-light: #7e9d95;
+  --button-glow: rgba(126,157,149,0.4);
+  --button-text: #e1f5f2;
+  --button-text-hover: #a7f3d0;
+}
+[data-theme="summer-day"] {
+  --button-dark: #b8860b;
+  --button-light: #ffd54f;
+  --button-glow: rgba(255,213,79,0.4);
+  --button-text: #3f2a14;
+  --button-text-hover: #78350f;
+}
+[data-theme="summer-night"] {
+  --button-dark: #c58b00;
+  --button-light: #ffe066;
+  --button-glow: rgba(255,224,102,0.4);
+  --button-text: #f1f1f1;
+  --button-text-hover: #ffd60a;
+}
+[data-theme="autumn-day"] {
+  --button-dark: #8d5535;
+  --button-light: #d7a17a;
+  --button-glow: rgba(215,161,122,0.4);
+  --button-text: #fff7ed;
+  --button-text-hover: #7c2d12;
+}
+[data-theme="autumn-night"] {
+  --button-dark: #a65a33;
+  --button-light: #d99d85;
+  --button-glow: rgba(217,157,133,0.4);
+  --button-text: #f2e4d5;
+  --button-text-hover: #ffd8a8;
+}
+[data-theme="winter-day"] {
+  --button-dark: #1a3b5d;
+  --button-light: #5584b4;
+  --button-glow: rgba(85,132,180,0.4);
+  --button-text: #f0f4f8;
+  --button-text-hover: #102a43;
+}
+[data-theme="winter-night"] {
+  --button-dark: #274060;
+  --button-light: #7aaefb;
+  --button-glow: rgba(122,174,251,0.4);
+  --button-text: #e0eefa;
+  --button-text-hover: #d0f0fd;
+}
